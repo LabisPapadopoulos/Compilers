@@ -1,0 +1,10 @@
+http://cs.ucla.edu/classes/spring11/cs132/kannan/mips-interpreter.html
+
+MIPS Interpreter
+We'll be using the Java-based MARS MIPS Simulator.
+
+Download: mars.jar.
+
+java -jar mars.jar nc <input-file>
+
+Running without any arguments will bring up the simulator GUI, which will let you step forward and backward through your program.

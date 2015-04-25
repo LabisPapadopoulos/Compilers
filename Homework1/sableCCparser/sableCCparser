@@ -1,0 +1,35 @@
+Package gr.uoa.di.std08169.compilers.sablecc;
+
+Helpers
+    space = ' ';
+    tab = 9;
+    newline = 10;
+
+Tokens
+    num = ['0' .. '9']+;
+    plus = '+';
+    minus = '-';
+    mult = '*';
+    div = '/';
+    left_parenthesis = '(';
+    right_parenthesis = ')';
+    whitespace = (space | tab | newline)+;
+
+Ignored Tokens
+    whitespace;
+
+Productions
+    exp     = {exp} term exp2;
+
+    exp2    = {plus_exp2} plus term exp2
+            | {minus_exp2} minus term exp2
+            | {empty_exp2} ;
+
+    term    = {term} factor term2;
+
+    term2   = {mult_term2} mult factor term2
+            | {div_term2} div factor term2
+            | {empty_term2} ;
+
+    factor  = {num_factor} num
+            | {exp_factor} left_parenthesis exp right_parenthesis;
